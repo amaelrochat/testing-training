@@ -7,62 +7,88 @@ const InvalidPriceException = require("./InvalidPriceException.js");
 module.exports = class CartItem {
 
     //region private attributes
-    //TODO Missing private attributs
+    #articleIdValue;
+    #nameValue;
+    #quantity;
+    #price;
     //endregion private attributes
 
     //region public methods
     constructor(articleId, name, quantity, price) {
-        //TODO Implement this method
+        this.#articleId = articleId;
+        this.quantity = quantity;
+        this.price = price;
+        this.#name = name;
     }
 
+
     get articleId() {
-        //TODO Implement this method
+        return this.#articleIdValue;
     }
 
     get name() {
-        //TODO Implement this method
+        return this.#nameValue;
     }
 
     get quantity() {
-        //TODO Implement this method
+        return this.#quantity;
     }
 
     set quantity(value) {
-        //TODO Implement this method
+        this.#validateQuantity(value);
+        return this.#quantity = value;
     }
 
     get price() {
-        //TODO Implement this method
+        return this.#price;
     }
 
     set price(value) {
-        //TODO Implement this method
+        this.#validatePrice(value);
+        return this.#price = value;
     }
 
     get total() {
-        //TODO Implement this method
+        return this.#quantity * this.#price;
     }
     //endregion public methods
 
     //region private methods
     set #articleId(value) {
-        //TODO Implement this method
+        this.#validateArticleId(value);
+        return this.#articleIdValue = value;
     }
 
     set #name(value) {
-        //TODO Implement this method
+        return this.#nameValue = value;
     }
 
     #validateArticleId(articleId) {
-        //TODO Implement this method
+        if (articleId >= 1) {
+            return articleId;
+        }
+        else {
+            throw new InvalidArticleIdException();
+        }
     }
 
     #validateQuantity(quantity) {
-        //TODO Implement this method
+        if (quantity >= 1) {
+            return quantity;
+        }
+        else {
+            throw new InvalidQuantityException();
+        }
     }
 
     #validatePrice(price) {
-        //TODO Implement this method
+        if (price >= 10) {
+            return price;
+        }
+        else {
+            throw new InvalidPriceException();
+        }
+
     }
     //endregion private methods
 }
