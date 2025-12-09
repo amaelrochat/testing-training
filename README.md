@@ -2,7 +2,7 @@
 
 # DEVOPS_BDD_TRAINING
 
-DEVOPS_TDD_TRAINING est un projet permettant d'entraîner git-flow et la pratique du BDD. adasdasdasdasdas
+DEVOPS_TDD_TRAINING est un projet permettant d'entraîner git-flow et la pratique du BDD. adasdasdasdasdasgjghjghjgjghjg
 
 ## Installation
 
